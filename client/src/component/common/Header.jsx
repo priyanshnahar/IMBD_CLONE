@@ -1,7 +1,9 @@
-import {AppBar, Toolbar, styled, Typography} from '@mui/material';
+import {AppBar, Toolbar, styled, Typography, InputBase} from '@mui/material';
 import { logoURL } from '../../constants/constant';
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon  from '@mui/icons-material/Menu';
 import { Box } from '@mui/system';
+
+
 
 const StyledToolBar = styled(Toolbar) `
     background: #121212;
@@ -21,11 +23,10 @@ const Header = () => {
         <Logo src={logoURL} alt="logo" />
         <Box>
         <MenuIcon/>
-        <Typography>
-        Menu
-      </Typography>
+        <Typography>Menu</Typography>
         </Box>
-     
+        <InputBase/>
+        <Typography>IMDb <Box component="span">Pro</Box></Typography>       
         </StyledToolBar>
      </AppBar>
     )
