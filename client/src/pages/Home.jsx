@@ -7,7 +7,8 @@ import { categoryMovies } from "../services/api";
 import { NOWPLAYING_API_URL } from "../constants/constant";
 import { Box } from "@mui/material";
 import Banner from "../component/Banner";
-import {UpNext} from "../component/UpNext";
+import UpNext from "../component/UpNext";
+
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -24,7 +25,7 @@ const Home = () => {
       <Header />
       <Box>
         <Banner movies = {movies} />
-        <UpNext />
+        <UpNext movies = {movies} />
       </Box>
     </>
   );
