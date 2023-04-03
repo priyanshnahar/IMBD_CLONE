@@ -50,6 +50,10 @@ const Header = () => {
         setOpen(e.currentTarget);
     }
 
+    const handleClose = () => {
+      setOpen(null)
+    }
+
   return (
     <AppBar>
       <StyledToolBar>
@@ -58,7 +62,7 @@ const Header = () => {
           <MenuIcon />
           <Typography>Menu</Typography>
         </Box>
-        <HeaderMenu open= {open}/>
+        <HeaderMenu open= {open} handleClose={handleClose}/>
         <InputSearchField />
         <Typography>
           IMDb <Box component="span">Pro</Box>
