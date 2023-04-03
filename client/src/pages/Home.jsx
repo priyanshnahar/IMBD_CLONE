@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 
 import Header from "../component/common/Header";
+
+
 import { categoryMovies } from "../services/api";
 import { NOWPLAYING_API_URL } from "../constants/constant";
 import { Box } from "@mui/material";
+import Banner from "../component/Banner";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -19,7 +22,7 @@ const Home = () => {
     <>
       <Header />
       <Box>
-        <Banner />
+        <Banner movies = {movies} />
       </Box>
     </>
   );
