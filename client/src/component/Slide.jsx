@@ -18,11 +18,14 @@ const responsive = {
   },
 };
 
-const StyledBanner = styled("img")({
-  width: "100%",
-});
+const StyledBanner = styled("img")`
+  width: "100%";
+  margin-top: 20px;
+`;
 
-const Title = styled(Typography)
+const Title = styled(Typography)`
+  color: #ffffff;
+`;
 
 const Slide = ({ movies }) => {
   return (
@@ -38,13 +41,12 @@ const Slide = ({ movies }) => {
     >
       {movies.map((movie) => (
         <>
- <StyledBanner
-          src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-          alt="banner"
-        />
-        <Typography>{movie.original_title}</Typography>
+          <StyledBanner
+            src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+            alt="banner"
+          />
+          <Title>{movie.original_title}</Title>
         </>
-       
       ))}
     </Carousel>
   );
