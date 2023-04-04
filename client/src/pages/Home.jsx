@@ -5,10 +5,20 @@ import Header from "../component/common/Header";
 
 import { categoryMovies } from "../services/api";
 import { NOWPLAYING_API_URL } from "../constants/constant";
-import { Box } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import Banner from "../component/Banner";
 import UpNext from "../component/UpNext";
+import Slide from "../component/Slide";
 
+
+const Wrapper = styled(Box)`
+  display: flex;
+  padding: 20px 0;
+`;
+
+const Component = styled(Box)`
+  padding: 0 115px;
+`
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -23,10 +33,14 @@ const Home = () => {
   return (
     <>
       <Header />
-      <Box>
+      <Component>
+      <Wrapper>
         <Banner movies = {movies} />
         <UpNext movies = {movies} />
-      </Box>
+      </Wrapper>
+      <Slide movies = {movies}/>
+      </Component>
+     
     </>
   );
 };
